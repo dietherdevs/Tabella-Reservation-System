@@ -1,0 +1,373 @@
+/* style.css - shared stylesheet for all pages */
+
+/* --- FONTS --- */
+/* Ensure these font files are in public/fonts/ or adjust path */
+@font-face {
+  font-family: 'ErasBoldITC';
+  /* Assuming fonts are in public/fonts/ folder. If they are in CSS folder, remove '../fonts/' */
+  src: url('../fonts/ErasBoldITC.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OldLondon';
+  src: url('../fonts/OldLondon.ttf') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Judson:wght@400;700&display=swap');
+
+:root{
+  --gold: #A1793F;
+  --maroon: #800000;
+  --light-gray: #D9D9D9;
+  --black: #000;
+  --page-max-width: 1200px; /* Added missing variable */
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family: "Judson", Georgia, serif;
+  color:var(--black);
+  background:#fff;
+}
+
+/* === LOGIN PAGE STYLING === */
+.login-container {
+  max-inline-size: 720px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.logo-large {
+  display: block;
+  block-size: 150px;
+  margin: 10px auto 20px;
+}
+
+h2 {
+  font-family: 'Judson', serif;
+  font-size: 24px;
+  margin-block-end: 6px;
+}
+
+p {
+  font-size: 14px;
+  margin-block-start: 0;
+}
+
+.divider {
+  inline-size: 70%;
+  margin: 20px auto;
+  border: none;
+  border-block-start: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* Form layout */
+.form-card {
+  max-inline-size: 420px;
+  margin: 18px auto;
+  padding: 10px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  text-align: start;
+  margin: 8px 0 6px;
+  font-size: 14px;
+}
+
+input[type="email"],
+input[type="password"] {
+  inline-size: 100%;
+  padding: 14px 18px;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: var(--light-gray);
+  outline: none;
+  font-size: 14px;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+}
+
+.form-actions {
+  margin-block-start: 18px;
+}
+
+.action-btn {
+  background: var(--maroon);
+  color: #fff;
+  padding: 10px 36px;
+  border-radius: 30px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.or-text {
+  margin: 16px 0 10px;
+  font-weight: bold;
+}
+
+.signup-btn {
+  background: #4d4d4d;
+  color: #fff;
+  padding: 10px 32px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Small logo used on other pages */
+.logo-small {
+  block-size: 90px;
+  display: block;
+  margin: 10px auto;
+}
+
+/* shared header / navbar */
+header.global-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 40px;
+  background:#f2f2f2;
+  border-block-end:1px solid rgba(0,0,0,0.15);
+  position:sticky;
+  inset-block-start:0;
+  z-index:60;
+}
+.header-left, .header-right { display:flex; align-items:center; gap:20px; }
+.header-center { text-align:center; flex:1; }
+.header-center img{ block-size:70px; display:block; margin:0 auto; }
+
+.header-link{
+  color:var(--black);
+  text-decoration:none;
+  font-size:16px;
+  position:relative;
+}
+.header-link::after{
+  content:'';
+  position:absolute;
+  block-size:6px;
+  inline-size:6px;
+  inset-inline-end:-8px;
+  inset-block-start:6px;
+  background:var(--gold);
+  border-radius:50%;
+  display:inline-block;
+}
+
+/* content wrapper center */
+.container{
+  max-inline-size:var(--page-max-width);
+  margin:40px auto;
+  padding:0 20px;
+}
+
+/* hero styles for index */
+.hero {
+  block-size: 80vh;
+  background: url('../images/index1.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  position:relative;
+}
+.hero .overlay {
+  padding: 40px 20px;
+  backdrop-filter: blur(0.5px);
+}
+.hero h2 {
+  font-family:'Judson', serif;
+  font-size:30px;
+  color:var(--maroon);
+  -webkit-text-stroke:1px var(--light-gray);
+  margin-block-end:8px;
+}
+.hero .tabella{
+  font-family:'Cinzel Decorative', serif;
+  color:var(--gold);
+  -webkit-text-stroke:1px var(--light-gray);
+}
+.hero h1 {
+  font-family: 'ErasBoldITC', Impact, Arial Black, sans-serif;
+  font-size:68px;
+  color:var(--maroon);
+  -webkit-text-stroke:2px var(--light-gray);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin:14px 0 22px;
+}
+.hero .hero-btn {
+  background:var(--maroon);
+  color:#fff;
+  padding:12px 28px;
+  border-radius:8px;
+  border:none;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.featured {
+  background: url('../images/index2.jpg') center/cover no-repeat;
+  background-size: 200%; 
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed; 
+  padding: 80px 0; 
+  color: var(--black);
+  inline-size: 100vw;
+  position: relative;
+  inset-inline-start: 50%;
+  inset-inline-end: 50%;
+  margin-inline-start: -50vw;
+  margin-inline-end: -50vw;
+}
+
+.featured h2 { font-style:italic; font-size:28px; margin-block-end:22px; }
+
+/* menu grid */
+.menu-grid {
+  display:flex;
+  gap:18px;
+  align-items:stretch;
+}
+.menu-card{
+  position:relative;
+  flex:1;
+  min-block-size:420px;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  transition:transform .28s ease;
+  cursor:pointer;
+  background:#000;
+}
+.menu-card img{ inline-size:100%; block-size:100%; object-fit:cover; display:block; }
+
+.menu-overlay{
+  position:absolute;
+  inset-inline-start:0; inset-block-start:0; inset-inline-end:0; inset-block-end:0;
+  background: linear-gradient(180deg, rgba(161,121,63,0.88), rgba(161,121,63,0.88));
+  color:#fff;
+  padding:26px;
+  transform:translateY(100%);
+  transition: transform .28s ease, opacity .28s ease;
+  opacity:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  gap:12px;
+}
+.menu-card:hover{ transform:translateY(-6px); }
+.menu-card:hover .menu-overlay{ transform:translateY(0); opacity:1; }
+
+.menu-overlay h3{
+  margin:0;
+  font-family:'Cinzel Decorative', serif;
+  font-size:20px;
+  color:#fff;
+  text-transform:uppercase;
+}
+.menu-overlay ul{ list-style:none; padding:0; margin:6px 0 0; line-height:1.6; }
+.menu-overlay li{ text-decoration:underline; cursor:default; color:#fff; font-size:16px; margin-block-end:6px; }
+
+.overlay-actions{
+  margin-block-start:12px;
+  display:flex;
+  gap:12px;
+}
+.btn {
+  background:var(--maroon);
+  color:#fff;
+  padding:8px 14px;
+  border-radius:20px;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+}
+.btn.secondary {
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.9);
+}
+
+.form-center{ max-inline-size:680px; margin:18px auto; text-align:center; }
+.form-card{ padding:22px; margin:10px auto; }
+label{ display:block; text-align:start; margin:8px 0 6px; font-size:14px; }
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+  inline-size:100%;
+  padding:14px 18px;
+  border-radius:24px;
+  border:1px solid rgba(0,0,0,0.2);
+  background:var(--light-gray);
+  outline:none;
+  font-size:14px;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.08);
+}
+textarea{ min-block-size:80px; border-radius:26px; padding-block-start:18px; }
+
+.form-actions { margin-block-start:18px; display:flex; justify-content:center; gap:16px; }
+.action-btn {
+  background:var(--maroon);
+  color:#fff;
+  padding:12px 32px;
+  border-radius:30px;
+  font-size:18px;
+  border:none;
+  cursor:pointer;
+}
+
+.calendar {
+  inline-size:100%;
+  border-collapse:collapse;
+  margin:12px 0 30px;
+}
+.calendar th, .calendar td {
+  border:1px solid rgba(0,0,0,0.12);
+  text-align:center;
+  padding:18px;
+  background: #f6f6f6;
+}
+.time-options{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+.time-col{ flex:1; text-align:center; }
+.time-col button{
+  display:block;
+  inline-size:70%;
+  margin:10px auto;
+  padding:12px;
+  border-radius:6px;
+  border:none;
+  background:var(--light-gray);
+  cursor:pointer;
+}
+
+/* summary box */
+.summary-box{
+  max-inline-size:680px;
+  margin:34px auto;
+  padding:28px;
+  border-radius:18px;
+  background:var(--light-gray);
+  border:1px solid rgba(0,0,0,0.12);
+}
+
+/* small helpers */
+.small-link{ display:block; margin-block-start:18px; color:var(--black); text-decoration:underline; text-align:start;}
+.center { text-align:center; }
+.logo-small{ block-size:90px; display:block; margin:10px auto; }
+
+/* responsive */
+@media (max-width:980px){
+  .menu-grid{ flex-direction:column; }
+  .menu-card{ min-block-size:280px; }
+}
