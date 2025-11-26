@@ -16,7 +16,7 @@
       color: #000;
     }
 
-    /* Header Section */
+
     header.global-header {
       display: flex;
       justify-content: center;
@@ -32,7 +32,6 @@
       block-size: 70px;
     }
 
-    /* Right-side links */
     .header-links {
       display: flex;
       gap: 25px;
@@ -56,7 +55,6 @@
       background-color: var(--gold);
     }
 
-    /* Main Content */
     main.container {
       text-align: center;
       padding: 40px 20px;

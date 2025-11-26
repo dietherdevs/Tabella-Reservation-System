@@ -5,9 +5,9 @@
   <title>Summary - Tabella</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
   <style>
-    /* Styling for the QR Code Section */
+  
     #qr-section {
-      display: none; /* Hidden by default */
+      display: none; 
       margin-top: 20px;
       padding: 20px;
       background: #fff;

@@ -2,62 +2,40 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Tabella - Home</title>
+  <title>Date & Time - Tabella</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 </head>
 <body>
   <header class="global-header">
-    <div class="header-left">
-      <a class="header-link" href="/about">About Us</a>
-      <a class="header-link" href="/contact">Contact Us</a>
-    </div>
+    <div class="header-left"><a class="header-link" href="/reservation">Back to Form</a></div>
     <div class="header-center"><img src="{{ asset('images/logo.jpg') }}" alt="Tabella logo"></div>
-    <div class="header-right">
-      <a class="header-link" href="/login">Login</a>
-    </div>
+    <div class="header-right"><a class="header-link" href="/menu">Menu</a></div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="overlay">
-        <h2>Welcome to <span class="tabella">Tabella</span></h2>
-        <h1>YOUR EVENING ELEVATED</h1>
-        <button class="hero-btn" onclick="location.href='/menu'">RESERVE NOW!</button>
+  <main class="container">
+    <h1>Date & Time</h1>
+    <p class="center">Pick the Perfect Moment to Dine with Us</p>
+
+    <form id="datetime-form" class="form-card" action="/payment" method="GET"> 
+      <label>Select Date</label>
+      <input type="date" name="date" required />
+
+      <label style="margin-block-start:12px">Select Time</label>
+      <select name="time" required>
+        <option value="09:00">09:00 am</option>
+        <option value="11:00">11:00 am</option>
+        <option value="13:00">1:00 pm</option>
+        <option value="15:00">3:00 pm</option>
+        <option value="17:00">5:00 pm</option>
+        <option value="18:00">6:00 pm</option>
+        <option value="19:00">7:00 pm</option>
+      </select>
+
+      <div class="form-actions">
+        <a class="small-link" href="/reservation">Back to Form</a>
+        <button class="action-btn" type="submit">Next</button>
       </div>
-    </section>
-
-    <section class="featured">
-      <div class="container">
-        <h2 class="center">Featured Dishes</h2>
-        <div id="bundle-section" style="margin-block-start: 20px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
-        
-          <button id="prevBundle" style="background:none;border:none;font-size:24px;cursor:pointer;">◀</button>
-
-          <div style="display:flex; gap:24px; flex-wrap:wrap; align-items:center; justify-content:center;">
-            <div id="bundle-image" style="min-inline-size:260px;">
-              <img src="{{ asset('images/chicken.jpg') }}" style="inline-size:100%; border-radius:10px; transition:opacity 0.4s ease;" alt="grilled chicken">
-            </div>
-            <div id="bundle-info" style="flex:1; padding-inline-start:20px; transition:opacity 0.4s ease;">
-              <h3 id="bundle-title">Family Bundle – Tabella Feast (₱3,599)</h3>
-              <ul id="bundle-list">
-                <li>Good for 4–6 persons</li>
-                <li>Grilled Chicken Platter</li>
-                <li>Spaghetti Tabella (House Special)</li>
-                <li>Garlic Rice Platter</li>
-                <li>Caesar Garden Salad</li>
-                <li>Chocolate Cake</li>
-                <li>2 Pitchers of Iced Tea</li>
-              </ul>
-              <div style="margin-block-start:14px;">
-                <a href="/menu" class="btn">View Full Menu</a>
-              </div>
-            </div>
-          </div>
-
-          <button id="nextBundle" style="background:none;border:none;font-size:24px;cursor:pointer;">▶</button>
-        </div>
-      </div>
-    </section>
+    </form>
   </main>
 
   <script src="{{ asset('js/script.js') }}"></script>
